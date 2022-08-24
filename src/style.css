@@ -1,0 +1,48 @@
+html {
+  width: 100%;
+}
+
+body {
+  max-width: 100%;
+  height: 100%;
+}
+
+main {
+  width: calc(100% - 32px);
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.refreshHead {
+  display: flex;
+  gap: 16px;
+}
+
+section {
+  max-width: calc(100% - 32px);
+  display: flex;
+  gap: 32px;
+}
+
+ul {
+  list-style: none;
+  border-width: 1px;
+  border-color: darkgray;
+  border-style: solid;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
