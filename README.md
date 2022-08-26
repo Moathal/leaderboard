@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Todo List
+# Leader Board
 
-> This project is listing names and scores in a leaderboard you can add your name with the score to check your rank.
+> This project is listing names and scores in a leader board you can add your name with the score to check your rank.
 
 
 ## Built With
