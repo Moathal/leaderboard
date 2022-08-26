@@ -30,7 +30,7 @@ const reload = async () => {
   list.innerText = '';
   results.forEach((player, i) => {
     const li = document.createElement('li');
-    if ( i % 2 === 0) li.style.backgroundColor = 'lightgray'
+    if (i % 2 === 0) li.style.backgroundColor = 'lightgray';
     li.innerHTML = `<p>${player.user}</p><p> : </p><p>${player.score}</p>`;
     list.appendChild(li);
   });
