@@ -28,9 +28,10 @@ const postValue = async () => {
 const reload = async () => {
   const results = await getValue();
   list.innerText = '';
-  results.forEach((player) => {
+  results.forEach((player, i) => {
     const li = document.createElement('li');
-    li.innerText = `${player.user}: ${player.score}`;
+    if (i % 2 === 0) li.style.backgroundColor = 'lightgray';
+    li.innerHTML = `<p>${player.user}</p><p> : </p><p>${player.score}</p>`;
     list.appendChild(li);
   });
 };
