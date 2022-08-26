@@ -8,33 +8,42 @@ const submit = document.getElementById('submit');
 const list = document.getElementById('list');
 
 const getValue = async () => {
-    const response = await fetch(gameAPI).then(res => res.json());
-    return response.result;
+  const response = await fetch(gameAPI).then((res) => res.json());
+  return response.result;
 };
 
 const postValue = async () => {
-     await fetch(gameAPI, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            user: name.value,
-            score: score.value
-        })
-    });
+  await fetch(gameAPI, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      user: name.value,
+      score: score.value,
+    }),
+  });
 };
 
-submit.addEventListener('click', () =>{
-    postValue()
-});
+const reload = async () => {
+  const results = await getValue();
+  list.innerText = '';
+  results.forEach((player) => {
+    const li = document.createElement('li');
+    li.innerText = `${player.user}: ${player.score}`;
+    list.appendChild(li);
+  });
+};
+
+reload();
 
 refresh.addEventListener('click', () => {
-    console.log(getValue())
-    list.innerText = '';
-    results.forEach((player) => {
-        let li = document.createElement('li');
-        li.innerText = `${player.user}: ${player.score}`;
-        list.appendChild(li);
-    });
-})
+  reload();
+});
+
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  postValue();
+  name.value = '';
+  score.value = '';
+});
