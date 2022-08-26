@@ -12,10 +12,15 @@
 
 
 ## live preview
-[Click Here](https://Moathal.github.io/leaderboard)
+Not yet available
 
 
 ## Getting Started
+
+### Setup in local machine
+- Clone it
+- `npm install`
+- `npm start`
 
 ### Prerequisites
 
